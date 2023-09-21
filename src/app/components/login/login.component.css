@@ -1,5 +1,5 @@
 .container {
-  height: 100%;
+  height: 150%;
   background: linear-gradient(
     180deg,
     rgba(2, 0, 36, 1) 0%,
@@ -12,10 +12,10 @@
 }
 
 .form {
-  width: 25rem;
+  width: 30rem;
   margin: auto;
   background-color: rgb(235, 235, 235);
-  padding: 4rem 1rem;
+  padding: 4rem 2rem;
   border-radius: 1rem;
 }
 
