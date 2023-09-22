@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       .authenticate(this.creds)
       .subscribe((resposta: { headers: { get: (arg0: string) => string } }) => {
         this.service.successfulLogin(
-          resposta.headers.get("authorizaton").substring(7)
+          resposta.headers.get("authorization").substring(7)
         );
         this.router.navigate([""]);
       });
