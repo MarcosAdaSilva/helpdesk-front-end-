@@ -17,14 +17,28 @@ import { MatTableModule } from "@angular/material/table";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgxMaskModule } from "ngx-mask";
+import { ToastrModule } from "ngx-toastr";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { ChamadoCreateComponent } from "./components/chamado/chamado-create/chamado-create.component";
+import { ChamadoListComponent } from "./components/chamado/chamado-list/chamado-list.component";
+import { ChamadoReadComponent } from "./components/chamado/chamado-read/chamado-read.component";
+import { ChamadoUpdateComponent } from "./components/chamado/chamado-update/chamado-update.component";
+import { ClienteCreateComponent } from "./components/cliente/cliente-create/cliente-create.component";
+import { ClienteDeleteComponent } from "./components/cliente/cliente-delete/cliente-delete.component";
+import { ClienteListComponent } from "./components/cliente/cliente-list/cliente-list.component";
+import { ClienteUpdateComponent } from "./components/cliente/cliente-update/cliente-update.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { HomeComponent } from "./components/home/home.component";
 import { LoginComponent } from "./components/login/login.component";
 import { NavComponent } from "./components/nav/nav.component";
+import { TecnicoCreateComponent } from "./components/tecnico/tecnico-create/tecnico-create.component";
+import { TecnicoDeleteComponent } from "./components/tecnico/tecnico-delete/tecnico-delete.component";
 import { TecnicoListComponent } from "./components/tecnico/tecnico-list/tecnico-list.component";
+import { TecnicoUpdateComponent } from "./components/tecnico/tecnico-update/tecnico-update.component";
+import { AuthInterceptorProvider } from "./interceptors/auth.interceptor";
 
 // Para trabalhar com formulários no Angular 12
 // Para realizar requisições HTTP
@@ -38,6 +52,17 @@ import { TecnicoListComponent } from "./components/tecnico/tecnico-list/tecnico-
     HeaderComponent,
     TecnicoListComponent,
     LoginComponent,
+    TecnicoCreateComponent,
+    TecnicoUpdateComponent,
+    TecnicoDeleteComponent,
+    ClienteCreateComponent,
+    ClienteDeleteComponent,
+    ClienteListComponent,
+    ClienteUpdateComponent,
+    ChamadoListComponent,
+    ChamadoCreateComponent,
+    ChamadoUpdateComponent,
+    ChamadoReadComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,8 +88,14 @@ import { TecnicoListComponent } from "./components/tecnico/tecnico-list/tecnico-
     MatIconModule,
     MatListModule,
     MatCardModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      closeButton: true,
+      progressBar: true,
+    }),
+    NgxMaskModule.forRoot(),
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
