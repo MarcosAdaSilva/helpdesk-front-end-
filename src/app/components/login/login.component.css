@@ -1,5 +1,5 @@
 .container {
-  height: 150%;
+  height: 100%;
   background: linear-gradient(
     180deg,
     rgba(2, 0, 36, 1) 0%,
@@ -15,7 +15,7 @@
   width: 30rem;
   margin: auto;
   background-color: rgb(235, 235, 235);
-  padding: 4rem 2rem;
+  padding: 4rem 1rem;
   border-radius: 1rem;
 }
 
@@ -36,4 +36,8 @@ img {
 
 button {
   margin-top: 1.5rem;
+}
+
+mat-icon {
+  opacity: 0.6;
 }
