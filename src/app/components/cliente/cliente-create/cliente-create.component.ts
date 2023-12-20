@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { ToastrService } from "ngx-toastr";
 import { Cliente } from "src/app/models/cliente";
 import { ClienteService } from "src/app/services/cliente.service";
 
@@ -28,29 +27,13 @@ export class ClienteCreateComponent implements OnInit {
 
   constructor(
     private service: ClienteService,
-    private toast: ToastrService,
+
     private router: Router
   ) {}
 
   ngOnInit(): void {}
 
-  create(): void {
-    this.service.create(this.cliente).subscribe(
-      () => {
-        this.toast.success("Cliente cadastrado com sucesso", "Cadastro");
-        this.router.navigate(["clientes"]);
-      },
-      (ex) => {
-        if (ex.error.errors) {
-          ex.error.errors.forEach((element) => {
-            this.toast.error(element.message);
-          });
-        } else {
-          this.toast.error(ex.error.message);
-        }
-      }
-    );
-  }
+  create(): void {}
 
   addPerfil(perfil: any): void {
     if (this.cliente.perfis.includes(perfil)) {
